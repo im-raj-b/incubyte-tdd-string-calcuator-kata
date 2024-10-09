@@ -4,7 +4,9 @@ class StringCalculator {
     if (string === "") {
       return 0;
     }
-    return parseInt(string);
+    return string
+      .split(",")
+      .reduce((accumulator, num) => accumulator + parseInt(num), 0);
   }
 }
 
