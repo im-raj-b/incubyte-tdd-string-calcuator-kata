@@ -4,9 +4,13 @@ class StringCalculator {
     if (string === "") {
       return 0;
     }
-    return string
-      .split(",")
-      .reduce((accumulator, num) => accumulator + parseInt(num), 0);
+
+    const arrOfNumbers = string.split(/[\s,]+/);
+    const sum = arrOfNumbers.reduce(
+      (accumulator, num) => accumulator + parseInt(num),
+      0
+    );
+    return sum;
   }
 }
 
