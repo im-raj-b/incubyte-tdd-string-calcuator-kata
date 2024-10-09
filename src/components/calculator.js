@@ -1,3 +1,11 @@
-class StringCalculator {}
+class StringCalculator {
+  constructor() {}
+  add(string) {
+    if (string === "") {
+      return 0;
+    }
+    return parseInt(string);
+  }
+}
 
 module.exports = StringCalculator;
