@@ -1,6 +1,9 @@
 class StringCalculator {
-  constructor() {}
+  constructor() {
+    this.addCallCount = 0;
+  }
   add(numbers) {
+    this.addCallCount++;
     if (numbers === "") return 0;
 
     let delimiter = /[\s,]+/; // Default delimiters (comma and newline)
@@ -29,6 +32,9 @@ class StringCalculator {
     return numArray
       .filter((num) => num <= 1000 && !isNaN(num)) // Exclude numbers > 1000 and NaN
       .reduce((sum, num) => sum + num, 0);
+  }
+  GetCalledCount() {
+    return this.addCallCount;
   }
 }
 

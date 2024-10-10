@@ -37,3 +37,17 @@ test("should throw an exception for multiple negative numbers", () => {
     "negative numbers not allowed: -2, -3"
   );
 });
+
+test("should throw an exception for multiple negative numbers", () => {
+  const calculator = new StringCalculator();
+
+  expect(calculator.GetCalledCount()).toBe(0);
+
+  expect(() => calculator.add("1,-2,-3")).toThrow(
+    "negative numbers not allowed: -2, -3"
+  );
+
+  expect(calculator.GetCalledCount()).toBe(1);
+  expect(calculator.add("1\n2,3")).toBe(6);
+  expect(calculator.GetCalledCount()).toBe(2);
+});
