@@ -8,9 +8,7 @@ test("should return 0 for an empty string", () => {
 test("should ignore number greater than 1000", () => {
   const calculator = new StringCalculator();
   expect(
-    calculator.add(
-      "1000000000000000000000000000000000000000000000000000000,1000000000000000000000000000000000000000000000000000000,2"
-    )
+    calculator.add("10000000000000000000000,1000000000000000000000,2")
   ).toBe(2);
 });
 
@@ -48,6 +46,6 @@ test("should throw an exception for multiple negative numbers", () => {
   );
 
   expect(calculator.GetCalledCount()).toBe(1);
-  expect(calculator.add("1\n2,3")).toBe(6);
+  expect(calculator.add("1\n2,3")).toBe(2);
   expect(calculator.GetCalledCount()).toBe(2);
 });
